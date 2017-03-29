@@ -908,7 +908,8 @@ public class CAPSPageMenu: UIViewController, UIScrollViewDelegate, UIGestureReco
                     index++
                 }
             } else if menuItemWidthBasedOnTitleTextWidth && centerMenuItems {
-                self.configureMenuItemWidthBasedOnTitleTextWidthAndCenterMenuItems()
+                // remove this line to prevent menu dislocated after orientation changed
+//                self.configureMenuItemWidthBasedOnTitleTextWidthAndCenterMenuItems()
                 let selectionIndicatorX = CGRectGetMinX(menuItems[currentPageIndex].frame)
                 selectionIndicatorView.frame = CGRectMake(selectionIndicatorX, menuHeight - selectionIndicatorHeight, menuItemWidths[currentPageIndex], selectionIndicatorHeight)
             } else if centerMenuItems {
